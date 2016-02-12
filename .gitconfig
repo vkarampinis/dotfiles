@@ -1,0 +1,17 @@
+[user]
+	name = Vaios Karampinis
+	email = oden@oden.gr
+[core]
+	excludesfile = /Users/Oden/.gitignore_global
+	preloadindex = true
+	fscache = true
+[difftool "sourcetree"]
+	cmd = /Applications/DiffFork.app/Contents/SharedSupport/Support/bin/difffork -w \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = true
+[gc]
+	auto = 256
+[push]
+	default = simple
