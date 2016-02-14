@@ -20,3 +20,9 @@ alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# GitHub fetch pull request via id
+git-pull-pr() {
+  git fetch origin pull/$1/head:pull-$1
+  git checkout pull-$1
+}
