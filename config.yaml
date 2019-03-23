@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+      glob: true
+
+- clean: ["~"]
+
+- link:
+    ~/.bash_profile: config/.bash_profile
+    ~/.gitconfig: config/.gitconfig
+
+- shell:
+    - [tools/homebrew.sh, Checking brew...]
