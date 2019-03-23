@@ -1,6 +1,8 @@
 [user]
 	name = Vaios Karampinis
 	email = oden@oden.gr
+[github]
+	user = vkarampinis
 [core]
 	excludesfile = /Users/Oden/.gitignore_global
 	preloadindex = true
