@@ -7,6 +7,21 @@
 	excludesfile = /Users/Oden/.gitignore_global
 	preloadindex = true
 	fscache = true
+[color]
+	ui = auto
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[color "branch"]
+	local = yellow
+	remote = green
+	current = cyan
 [difftool "sourcetree"]
 	cmd = /Applications/DiffFork.app/Contents/SharedSupport/Support/bin/difffork -w \"$LOCAL\" \"$REMOTE\"
 	path =
