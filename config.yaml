@@ -3,6 +3,9 @@
       relink: true
       create: true
       glob: true
+    shell:
+        stdout: true
+        stderr: true
 
 - clean: ["~"]
 
@@ -11,4 +14,4 @@
     ~/.gitconfig: config/.gitconfig
 
 - shell:
-    - [tools/homebrew.sh, Checking brew...]
+    - tools/homebrew.sh
