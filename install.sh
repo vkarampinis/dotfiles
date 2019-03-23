@@ -2,24 +2,14 @@
 
 set -e
 
-BASE_CONFIG="base"
-CONFIG_SUFFIX=".yaml"
-
-META_DIR="meta"
-CONFIG_DIR="configs"
-PROFILES_DIR="profiles"
-
+CONFIG="config.yaml"
 DOTBOT_DIR="dotbot"
+
 DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
 
-
-cd "${BASE_DIR}"
-git submodule update --init --recursive
-
-
-for config in ${META_DIR}/${CONFIG_DIR}/*.yaml; do
-    configFile="$(mktemp)" ; echo -e "$(<"${BASE_DIR}/${META_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}")\n$(<"${BASE_DIR}/${config}")" > "$configFile"
-	"${BASE_DIR}/${META_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "$configFile" ; rm -f "$configFile"
-done
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
