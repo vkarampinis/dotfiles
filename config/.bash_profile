@@ -18,7 +18,9 @@ export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+source .functions
 source .aliases
+
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
@@ -30,9 +32,3 @@ export NVM_DIR="$HOME/.nvm"
 
 
 
-
-# GitHub fetch pull request via id
-git-pull-pr() {
-  git fetch origin pull/$1/head:pull-$1
-  git checkout pull-$1
-}

@@ -1,0 +1,5 @@
+# GitHub fetch pull request via id
+git-pull-pr() {
+  git fetch origin pull/$1/head:pull-$1
+  git checkout pull-$1
+}

@@ -11,6 +11,7 @@
 
 - link:
     ~/.aliases: config/.aliases
+    ~/.functions: config/.functions
     ~/.bash_profile: config/.bash_profile
     ~/.gitconfig: config/.gitconfig
 
