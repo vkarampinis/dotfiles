@@ -1,3 +1,4 @@
 mtr
 wget
 htop
+hub
