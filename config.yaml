@@ -16,5 +16,5 @@
     ~/.gitconfig: config/.gitconfig
 
 - shell:
-    - scripts/homebrew.sh
+    - scripts/brew.sh
     - scripts/tools.sh
