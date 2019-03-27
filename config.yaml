@@ -15,3 +15,4 @@
 
 - shell:
     - scripts/homebrew.sh
+    - scripts/tools.sh
