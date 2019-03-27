@@ -10,6 +10,7 @@
 - clean: ["~"]
 
 - link:
+    ~/.aliases: config/.aliases
     ~/.bash_profile: config/.bash_profile
     ~/.gitconfig: config/.gitconfig
 
