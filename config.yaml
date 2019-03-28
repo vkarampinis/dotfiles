@@ -18,3 +18,4 @@
 - shell:
     - scripts/brew.sh
     - scripts/tools.sh
+    - scripts/cask.sh
