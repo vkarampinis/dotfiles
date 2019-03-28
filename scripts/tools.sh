@@ -2,12 +2,10 @@
 TOOLS="_tools.txt"
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-while IFS= read -r var
-do
-  if test ! $(which $var)
+sed 's/[[:space:]]*#.*//;/^[[:space:]]*$/d' $SCRIPTPATH/$TOOLS | while read line; do
+  if test ! $(which $line)
     then
-      echo "Installing $var..."
-      brew install $var
+      echo "Installing $line..."
+      brew install $line
   fi
-done < "$SCRIPTPATH/$TOOLS"
-
+done
