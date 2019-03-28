@@ -18,8 +18,8 @@ export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-source .functions
-source .aliases
+source ~/.functions
+source ~/.aliases
 
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
