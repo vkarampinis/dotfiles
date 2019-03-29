@@ -15,3 +15,6 @@ quicklook-json
 
 # Preview most types of video files, as well as their thumbnails, cover art and metadata
 qlvideo
+
+# Preview archives
+betterzip
