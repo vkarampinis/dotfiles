@@ -2,3 +2,4 @@ mtr
 wget
 htop
 hub
+redis
