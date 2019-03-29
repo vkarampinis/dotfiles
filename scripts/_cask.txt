@@ -18,3 +18,6 @@ qlvideo
 
 # Preview archives
 betterzip
+
+# Allows you to thoroughly uninstall unwanted apps.
+appcleaner
