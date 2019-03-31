@@ -22,3 +22,5 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+alias medis="cd /Users/Oden/projects/medis/ ; npm run start > /dev/null &"
