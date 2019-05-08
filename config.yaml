@@ -17,5 +17,5 @@
 
 - shell:
     - scripts/brew.sh
-    - scripts/tools.sh
+    - scripts/brews.sh
     - scripts/cask.sh
