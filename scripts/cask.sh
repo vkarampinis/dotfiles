@@ -6,6 +6,8 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 . scripts/_utils.sh
 
+brew cask upgrade
+
 sed 's/[[:space:]]*#.*//;/^[[:space:]]*$/d' $SCRIPTPATH/$CASKS_TO_CHECK | while read cask; do
   if [ ! $(contains "${INSTALLED_CASKS[@]}" "$cask") == "y" ]; then
     echo "Installing $cask..."
