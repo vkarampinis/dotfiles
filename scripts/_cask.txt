@@ -24,3 +24,25 @@ appcleaner
 
 # Browser without ads
 brave-browser
+
+slack
+iterm2
+alfred
+cyberduck
+difffork
+docker
+dropbox
+firefox
+google-chrome
+keybase
+mysqlworkbench
+postman
+skype
+sourcetree
+sublime-text
+teamviewer
+tunnelblick
+viber
+visual-studio-code
+vlc
+vyprvpn
