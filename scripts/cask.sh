@@ -1,6 +1,5 @@
 #!/bin/sh
 
-INSTALLED_CASKS=(`brew cask list -1`)
 CASKS_TO_CHECK="_cask.txt"
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
@@ -8,6 +7,8 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 brew cask upgrade
 
+echo "Check casks to install..."
+INSTALLED_CASKS=(`brew cask list -1`)
 sed 's/[[:space:]]*#.*//;/^[[:space:]]*$/d' $SCRIPTPATH/$CASKS_TO_CHECK | while read cask; do
   if [ ! $(contains "${INSTALLED_CASKS[@]}" "$cask") == "y" ]; then
     echo "Installing $cask..."
