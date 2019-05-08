@@ -16,6 +16,6 @@
     ~/.gitconfig: config/.gitconfig
 
 - shell:
-    - scripts/brew.sh
+    - scripts/essentials.sh
     - scripts/brews.sh
     - scripts/cask.sh
