@@ -1,17 +1,15 @@
 #!/bin/sh
 TOOLS="_tools.txt"
+INSTALLED_BREWS=(`brew list -1`)
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-install_brews() {
-  if test ! $(brew list | grep $brew); then
-    echo "Installing $brew"
-    brew install $brew >/dev/null
-    echo "✓ installed!\n"
-  else
-    echo "$brew already installed. Skipped."
-  fi
-}
+. scripts/_utils.sh
+
+brew upgrade
 
 sed 's/[[:space:]]*#.*//;/^[[:space:]]*$/d' $SCRIPTPATH/$TOOLS | while read brew; do
-    install_brews $brew
+  if [ ! $(contains "${INSTALLED_BREWS[@]}" "$brew") == "y" ]; then
+    echo "Install $brew"
+    brew install $brew
+  fi
 done
