@@ -21,3 +21,9 @@ betterzip
 
 # Allows you to thoroughly uninstall unwanted apps.
 appcleaner
+
+# Web Dev friendly browser
+blisk
+
+# Browser without ads
+brave-browser
