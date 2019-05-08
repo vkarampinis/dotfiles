@@ -4,5 +4,5 @@ htop
 hub
 redis
 wrk
-mysql@8.0
+mysql
 
