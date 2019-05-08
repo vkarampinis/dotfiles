@@ -1,5 +1,5 @@
 #!/bin/sh
-TOOLS="_tools.txt"
+TOOLS="_brews.txt"
 INSTALLED_BREWS=(`brew list -1`)
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
