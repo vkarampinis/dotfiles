@@ -15,3 +15,6 @@ sed 's/[[:space:]]*#.*//;/^[[:space:]]*$/d' $SCRIPTPATH/$TOOLS | while read app;
     mas install $KEY
   fi
 done
+
+echo "Upgrade packages..."
+mas upgrade
