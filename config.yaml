@@ -19,3 +19,4 @@
     - scripts/essentials.sh
     - scripts/brews.sh
     - scripts/cask.sh
+    - scripts/apps.sh
