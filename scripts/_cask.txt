@@ -37,6 +37,7 @@ google-chrome
 keybase
 mysqlworkbench
 postman
+robo-3t
 skype
 sourcetree
 sublime-text
