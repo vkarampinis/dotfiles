@@ -35,6 +35,7 @@ dropbox
 firefox
 google-chrome
 keybase
+keepassx
 mysqlworkbench
 postman
 robo-3t
