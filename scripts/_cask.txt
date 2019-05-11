@@ -33,6 +33,7 @@ difffork
 docker
 dropbox
 firefox
+hammerspoon
 google-chrome
 keybase
 keepassx
