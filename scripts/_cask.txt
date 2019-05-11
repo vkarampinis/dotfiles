@@ -42,6 +42,7 @@ postman
 robo-3t
 skype
 sourcetree
+spotify
 sublime-text
 teamviewer
 tunnelblick
