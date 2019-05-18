@@ -4,7 +4,7 @@
 [github]
 	user = vkarampinis
 [core]
-	excludesfile = /Users/Oden/.gitignore_global
+	excludesfile = /Users/oden/.gitignore_global
 	preloadindex = true
 	fscache = true
 [color]
@@ -23,12 +23,20 @@
 	remote = green
 	current = cyan
 [difftool "sourcetree"]
-	cmd = /Applications/DiffFork.app/Contents/SharedSupport/Support/bin/difffork -w \"$LOCAL\" \"$REMOTE\"
-	path =
+	cmd = "code --wait --diff $LOCAL $REMOTE "
+	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	cmd = "code --wait $MERGED "
 	trustExitCode = true
 [gc]
 	auto = 256
 [push]
 	default = simple
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  "
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait "
