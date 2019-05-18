@@ -4,7 +4,7 @@
 [github]
 	user = vkarampinis
 [core]
-	excludesfile = /Users/oden/.gitignore_global
+	excludesfile = /Users/Oden/.gitignore_global
 	preloadindex = true
 	fscache = true
 [color]
@@ -40,3 +40,5 @@
 	tool = vscode
 [mergetool "vscode"]
 	cmd = "code --wait "
+[commit]
+	template = /Users/Oden/.stCommitMsg
