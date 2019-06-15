@@ -37,6 +37,7 @@ hammerspoon
 google-chrome
 keybase
 keepassx
+libreoffice
 mysqlworkbench
 postman
 robo-3t
