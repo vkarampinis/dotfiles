@@ -25,6 +25,7 @@ appcleaner
 # Browser without ads
 brave-browser
 
+1password
 slack
 iterm2
 alfred
