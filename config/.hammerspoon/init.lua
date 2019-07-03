@@ -1,12 +1,5 @@
 local function toggleApplication(name)
-  local app = hs.application.find(name)
-  if not app or app:isHidden() then
-    hs.application.launchOrFocus(name)
-  elseif hs.application.frontmostApplication() ~= app then
-    app:activate()
-  else
-    app:hide()
-  end
+  hs.application.launchOrFocus(name)
 end
 
 hs.hotkey.bind({"⌘"}, "1", function() toggleApplication("Google Chrome") end)
