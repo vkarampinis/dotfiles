@@ -38,6 +38,7 @@ hammerspoon
 google-chrome
 keybase
 keepassx
+ImageOptim
 libreoffice
 mysqlworkbench
 postman
@@ -52,3 +53,4 @@ viber
 visual-studio-code
 vlc
 vyprvpn
+
