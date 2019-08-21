@@ -1,6 +1,9 @@
 source /usr/local/git/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1="🍺  \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(__git_ps1) \$ "
+
+emoji="${debian_chroot:+($debian_chroot)}\$(if [ \$? == 0 ]; then echo 🍺; else echo 💥; fi) "
+
+export PS1="${emoji}\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(__git_ps1) \$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
