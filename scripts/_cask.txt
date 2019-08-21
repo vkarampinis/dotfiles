@@ -41,6 +41,7 @@ keepassx
 ImageOptim
 libreoffice
 mysqlworkbench
+notion
 postman
 robo-3t
 skype
