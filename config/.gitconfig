@@ -42,3 +42,5 @@
 	cmd = "code --wait "
 [commit]
 	template = /Users/Oden/.stCommitMsg
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
