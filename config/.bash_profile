@@ -19,6 +19,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+
 export XDEBUG_CONFIG="idekey=VSCODE"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
