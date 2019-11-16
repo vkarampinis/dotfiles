@@ -1,51 +1,33 @@
-# Preview source code files with syntax highlighting
-qlcolorcode
-
-# Display image size and resolution
-qlimagesize
-
-# Preview Markdown files
-qlmarkdown
-
-# Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
-qlstephen
-
-# Preview JSON files
-quicklook-json
-
-# Preview most types of video files, as well as their thumbnails, cover art and metadata
-qlvideo
-
-# Preview archives
-betterzip
-
-# Allows you to thoroughly uninstall unwanted apps.
-appcleaner
-
-# Browser without ads
-brave-browser
-
 1password
-slack
-iterm2
 alfred
+appcleaner
+betterzip
+brave-browser
 cyberduck
 difffork
 docker
 dropbox
 figma
 firefox
-hammerspoon
 google-chrome
-keybase
-keepassx
+hammerspoon
 ImageOptim
+iterm2
+keepassx
+keybase
 libreoffice
 mysqlworkbench
 notion
 postman
+qlcolorcode
+qlimagesize
+qlmarkdown
+qlstephen
+qlvideo
+quicklook-json
 robo-3t
 skype
+slack
 sourcetree
 spotify
 sublime-text
@@ -55,4 +37,3 @@ viber
 visual-studio-code
 vlc
 vyprvpn
-
