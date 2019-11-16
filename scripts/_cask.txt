@@ -33,6 +33,7 @@ cyberduck
 difffork
 docker
 dropbox
+figma
 firefox
 hammerspoon
 google-chrome
