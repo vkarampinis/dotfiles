@@ -18,6 +18,7 @@ iterm2
 keepassx
 keybase
 libreoffice
+macdown
 mysqlworkbench
 notion
 pgadmin4
