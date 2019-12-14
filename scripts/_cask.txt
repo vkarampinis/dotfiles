@@ -20,6 +20,7 @@ keybase
 libreoffice
 mysqlworkbench
 notion
+pgadmin4
 postman
 qlcolorcode
 qlimagesize
@@ -35,8 +36,8 @@ spotify
 sublime-text
 teamviewer
 tunnelblick
-whatsapp
 viber
 visual-studio-code
 vlc
 vyprvpn
+whatsapp
