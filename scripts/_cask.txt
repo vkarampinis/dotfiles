@@ -5,6 +5,7 @@ betterzip
 brave-browser
 cyberduck
 difffork
+discord
 docker
 dropbox
 fastlane
