@@ -19,6 +19,7 @@ keka
 keybase
 libreoffice
 macdown
+mounty
 mysqlworkbench
 notion
 pgadmin4
