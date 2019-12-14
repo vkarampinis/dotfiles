@@ -11,6 +11,7 @@ fastlane
 figma
 firefox
 google-chrome
+grammarly
 hammerspoon
 ImageOptim
 iterm2
