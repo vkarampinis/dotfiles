@@ -1,7 +1,6 @@
 1password
 alfred
 appcleaner
-betterzip
 brave-browser
 cyberduck
 difffork
@@ -16,6 +15,7 @@ hammerspoon
 ImageOptim
 iterm2
 keepassx
+keka
 keybase
 libreoffice
 macdown
