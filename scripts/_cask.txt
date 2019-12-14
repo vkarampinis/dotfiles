@@ -35,6 +35,7 @@ spotify
 sublime-text
 teamviewer
 tunnelblick
+whatsapp
 viber
 visual-studio-code
 vlc
