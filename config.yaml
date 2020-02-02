@@ -15,6 +15,9 @@
     ~/.bash_profile: config/.bash_profile
     ~/.gitconfig: config/.gitconfig
     ~/.hammerspoon: config/.hammerspoon
+    ~/.vim: config/.vim
+    ~/.vimrc: config/.vimrc
+    ~/.gvimrc: config/.gvimrc
     ~/Library/Application Support/SourceTree/actions.plist: config/sourcetree/actions.plist
 
 - shell:

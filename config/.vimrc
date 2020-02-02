@@ -1,6 +1,18 @@
+" Colors {{{
 syntax enable
 colorscheme monokai
-
+set termguicolors
+" }}}
+" Spaces & Tabs {{{
+set tabstop=4           " 4 space tab
+set expandtab           " use spaces for tabs
+set softtabstop=4       " 4 space tab
+set shiftwidth=4
+set modelines=1
+filetype indent on
+filetype plugin on
+set autoindent
+" }}}
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
@@ -8,39 +20,50 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'stephpy/vim-php-cs-fixer'
 " Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-call plug#end()
-" }}}
-" General Set commands {{{
-" --------------------------------------------------
 
+" PHP-specific integration
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'stephpy/vim-php-cs-fixer'
+call plug#end()
+let g:deoplete#enable_at_startup = 1
+" }}}
+" UI Layout {{{
 set nocompatible        " don't bother with vi compatibility
+set number              " show line numbers
+set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
+set showmatch           " higlight matching parenthesis
 set showmatch           " highlight matching [{()}]
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set signcolumn=yes	" draw the signcolumn
 set updatetime=100
-set number
-set signcolumn=yes
-
-
-" Folding
-set foldenable          " enable folding
-set foldlevelstart=10   " open most folds by default
-set foldnestmax=10      " 10 nested fold max
+" }}}
+" Searching {{{
+set ignorecase          " ignore case when searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight all matches
+" }}}
+" Folding {{{
+"=== folding ===
 set foldmethod=indent   " fold based on indent level
+set foldnestmax=10      " max 10 depth
+set foldlevelstart=10   " start with fold level of 1
+set foldenable          " enable folding
 " space open/closes folds
 nnoremap <space> za
 " }}}
-" General maps {{{
+" Leader & Maps {{{
 " --------------------------------------------------
 
 " turn off search highlight
@@ -53,15 +76,23 @@ nnoremap <leader>rv :source $MYVIMRC<CR>
 " save session, restore with mvim -S
 nnoremap <leader>s :mksession<CR>
 
+nnoremap <leader>] :TagbarToggle<CR>
 
 map <D-0> :only<CR>
 " }}}
-" Macvim settings {{{
+" MacVim settings {{{
 " --------------------------------------------------
 
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endif
+" }}}
+" Backups {{{
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
 " }}}
 " CtrlP {{{
 " --------------------------------------------------
@@ -126,6 +157,10 @@ let g:ale_lint_on_text_changed = 1
 
 
 
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
 
 
 
