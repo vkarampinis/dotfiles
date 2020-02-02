@@ -19,6 +19,7 @@
 
 - shell:
     - scripts/essentials.sh
+    - brew bundle install
     - scripts/brews.sh
     - scripts/cask.sh
     - scripts/apps.sh
