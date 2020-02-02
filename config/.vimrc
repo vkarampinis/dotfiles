@@ -20,13 +20,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-syntastic/syntastic'
+ Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
+"Plug 'neomake/neomake'
 " PHP-specific integration
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 Plug 'kristijanhusak/deoplete-phpactor'
@@ -36,6 +37,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'stephpy/vim-php-cs-fixer'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
+"call neomake#configure#automake('nrwi', 500)
 " }}}
 " UI Layout {{{
 set nocompatible        " don't bother with vi compatibility
@@ -136,32 +138,29 @@ autocmd BufWritePost *.php silent! call PhpCsFixerFixFile() " fix on save
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_highlight_linenrs = 1
 " }}}
-
-" vim-syntastic/syntastic options
+" Syntastic {{{
 set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ['php', 'phpstan']
-
-
+" }}}
+" Ale {{{
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'php': ['php'],
 \}
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 1
-
-
-
-
+" }}}
+" Load local files {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
+" }}}
 
 
 " vim:foldmethod=marker:foldlevel=0
