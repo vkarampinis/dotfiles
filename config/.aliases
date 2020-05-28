@@ -25,3 +25,17 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 alias reload="exec $SHELL -l"
 
 alias medis="cd /Users/Oden/projects/medis/ ; npm run start > /dev/null &"
+alias eclipse="/Applications/Eclipse.app/Contents/MacOS/eclipse -vm /Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home/lib"
+
+
+alias ci="composer install"
+alias cu="composer update"
+alias hs="hub sync"
+alias gc="git checkout"
+alias grh="git reset --hard HEAD"
+alias c="code"
+alias st="stree ."
+
+alias difff="meld --diff"
+alias grep="grep --color=auto"
+
