@@ -18,6 +18,8 @@
     ~/.vim: config/.vim
     ~/.vimrc: config/.vimrc
     ~/.gvimrc: config/.gvimrc
+    ~/.zshrc: config/.zshrc
+    ~/.p10k.zsh: config/.p10k.zsh
     ~/Library/Application Support/SourceTree/actions.plist: config/sourcetree/actions.plist
 
 - shell:
