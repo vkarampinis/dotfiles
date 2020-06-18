@@ -20,24 +20,36 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
- Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-
-"Plug 'neomake/neomake'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'neomake/neomake'
 " PHP-specific integration
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'kristijanhusak/deoplete-phpactor'
-Plug 'Shougo/deoplete.nvim'
+" Plug 'kristijanhusak/deoplete-phpactor'
+" Plug 'Shougo/deoplete.nvim'
+Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-gtags'
+Plug 'phpactor/ncm2-phpactor'
+Plug 'ncm2/ncm2-tern'
+Plug 'ncm2/ncm2-go'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-ultisnips' 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'stephpy/vim-php-cs-fixer'
+Plug 'StanAngeloff/php.vim'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
-"call neomake#configure#automake('nrwi', 500)
+call neomake#configure#automake('nrwi', 500)
+let g:neomake_open_list = 2
 " }}}
 " UI Layout {{{
 set nocompatible        " don't bother with vi compatibility
@@ -69,7 +81,7 @@ nnoremap <space> za
 " --------------------------------------------------
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>	
+nnoremap <leader><space> :nohlsearch<CR>
 
 " edit vimrc and load vimrc bindings
 nnoremap <leader>ev :sp $MYVIMRC<CR>
@@ -108,7 +120,7 @@ map <D-P> :CtrlPBuffer<CR>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
   " open ack.vim
-  nnoremap <leader>a :Ack 
+  nnoremap <leader>a :Ack
 endif
 " }}}
 " NERDTree {{{
@@ -124,12 +136,24 @@ map <D-9> :NERDTreeToggle<CR>
 " --------------------------------------------------
 
 " It will generate the tags each time you save a PHP file.
-au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
-
+" au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
 
 let g:php_cs_fixer_config_file = '.php_cs'
 let g:php_cs_fixer_path = "./vendor/bin/php-cs-fixer"
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile() " fix on save
+
+let g:php_var_selector_is_identifier = 1 " include the dollar sign $ as part of the highlighting group for a PHP variable.
+
+function! PhpSyntaxOverride()
+  " Put snippet overrides in this function.
+  hi! link phpDocTags phpDefine
+  hi! link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
 
 
 " }}}
@@ -138,9 +162,9 @@ autocmd BufWritePost *.php silent! call PhpCsFixerFixFile() " fix on save
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_highlight_linenrs = 1
 " }}}
-" Syntastic {{{
+" Syntastic {{{ 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -155,6 +179,28 @@ let g:ale_linters = {
 \}
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 1
+" }}}
+" ncm2 {{{
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+" set completeopt=noinsert,menuone,noselect
+
+augroup ncm2
+  au!
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+  au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
+  au User Ncm2PopupClose set completeopt=menuone
+augroup END
+
+" parameter expansion for selected entry via Enter
+inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+
+
+
 " }}}
 " Load local files {{{
 if filereadable(expand("~/.vimrc.local"))
