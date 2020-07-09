@@ -1,5 +1,4 @@
 bash
-bash-completion2
 git
 git-flow
 mtr
@@ -10,6 +9,6 @@ redis
 wrk
 mysql
 mas
-mongodb
+mongodb-community
 nmap
 Schniz/tap/fnm
