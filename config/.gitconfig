@@ -44,3 +44,5 @@
 	template = /Users/Oden/.stCommitMsg
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[alias]
+	co = checkout
