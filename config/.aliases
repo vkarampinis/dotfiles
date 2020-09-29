@@ -40,3 +40,4 @@ alias st="stree ."
 alias difff="meld --diff"
 alias grep="grep --color=auto"
 
+alias fixvpn="sudo ifconfig en0 down ; sudo route flush ; sudo ifconfig en0 up"
