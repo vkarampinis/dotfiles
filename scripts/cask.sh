@@ -8,10 +8,10 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 brew cask upgrade
 
 echo "Check casks to install..."
-INSTALLED_CASKS=(`brew cask list -1`)
+INSTALLED_CASKS=(`brew list --cask -1`)
 sed 's/[[:space:]]*#.*//;/^[[:space:]]*$/d' $SCRIPTPATH/$CASKS_TO_CHECK | while read cask; do
   if [ ! $(contains "${INSTALLED_CASKS[@]}" "$cask") == "y" ]; then
     echo "Installing $cask..."
-    brew cask install $cask
+    brew install --cask $cask
   fi
 done
