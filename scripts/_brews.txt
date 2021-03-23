@@ -5,6 +5,8 @@ mtr
 wget
 htop
 hub
+php
+php@7.4
 redis
 wrk
 mysql
