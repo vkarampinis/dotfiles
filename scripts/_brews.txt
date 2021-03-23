@@ -9,6 +9,5 @@ redis
 wrk
 mysql
 mas
-mongodb-community
 nmap
 Schniz/tap/fnm

@@ -7,7 +7,6 @@ difffork
 discord
 docker
 dropbox
-fastlane
 figma
 firefox
 google-chrome
@@ -20,6 +19,7 @@ keka
 keybase
 libreoffice
 macdown
+mailspring
 mounty
 mysqlworkbench
 notion
