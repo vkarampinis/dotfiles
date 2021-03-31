@@ -121,3 +121,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export COMPOSER_MEMORY_LIMIT=-1
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+export PATH="/Users/oden/.composer/vendor/bin:$PATH"
+export GPG_TTY=$(tty)
