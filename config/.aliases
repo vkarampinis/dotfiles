@@ -31,6 +31,8 @@ alias eclipse="/Applications/Eclipse.app/Contents/MacOS/eclipse -vm /Library/Jav
 
 alias ci="composer install"
 alias cu="composer update"
+alias rci="rm -rf vendor composer.lock ; composer install"
+alias pu="vendor/bin/phpunit"
 alias hs="hub sync"
 alias gc="git checkout"
 alias grh="git reset --hard HEAD"
@@ -41,3 +43,6 @@ alias difff="meld --diff"
 alias grep="grep --color=auto"
 
 alias fixvpn="sudo ifconfig en0 down ; sudo route flush ; sudo ifconfig en0 up"
+
+alias php8="brew unlink php@7.4 && brew link php"
+alias php7="brew unlink php && brew link php@7.4"
