@@ -22,6 +22,7 @@ keepassx
 keka
 keybase
 libreoffice
+maccy
 macdown
 mailspring
 mounty
@@ -35,6 +36,7 @@ qlmarkdown
 qlstephen
 qlvideo
 quicklook-json
+raindropio
 refined-github-safari
 robo-3t
 skype
