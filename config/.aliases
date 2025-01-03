@@ -3,9 +3,10 @@ alias please="sudo"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias composer='~/.composer/composer.phar'
+alias vim="nvim"
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="dig @resolver4.opendns.com myip.opendns.com +short"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -28,6 +29,7 @@ alias reload="exec $SHELL -l"
 alias medis="cd /Users/Oden/projects/medis/ ; npm run start > /dev/null &"
 alias eclipse="/Applications/Eclipse.app/Contents/MacOS/eclipse -vm /Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home/lib"
 
+alias ssl="local-ssl-proxy --key ~/.cert/localhost-key.pem --cert ~/.cert/localhost.pem"
 
 alias ci="composer install"
 alias cu="composer update"
@@ -36,13 +38,18 @@ alias pu="vendor/bin/phpunit"
 alias hs="hub sync"
 alias gc="git checkout"
 alias grh="git reset --hard HEAD"
-alias c="code"
-alias st="stree ."
+alias c="cursor"
+alias nrd="npm run dev"
 
 alias difff="meld --diff"
 alias grep="grep --color=auto"
 
 alias fixvpn="sudo ifconfig en0 down ; sudo route flush ; sudo ifconfig en0 up"
 
-alias php8="brew unlink php@7.4 && brew link php"
-alias php7="brew unlink php && brew link php@7.4"
+alias php74="brew unlink php@8.0 && brew unlink php@8.1 && brew link php@7.4"
+alias php80="brew unlink php@7.4 && brew unlink php@8.1 && brew link php@8.0"
+alias php81="brew unlink php@7.4 && brew unlink php@8.0 && brew link php@8.1"
+
+alias json="fx"
+alias pp="prettyping"
+alias pi="ssh pi.local -l pi"
