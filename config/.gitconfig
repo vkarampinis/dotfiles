@@ -4,9 +4,11 @@
 [github]
 	user = vkarampinis
 [core]
-	excludesfile = /Users/Oden/.gitignore_global
+	excludesfile = /Users/oden/.gitignore_global
 	preloadindex = true
 	fscache = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = vim
 [color]
 	ui = auto
 [color "diff"]
@@ -46,3 +48,8 @@
 	insteadOf = https://github.com/
 [alias]
 	co = checkout
+	dsf = diff --color
+[pager]
+	dsf = diff-so-fancy | less --tabs=4 -RFXS
+[interactive]
+	diffFilter = diff-so-fancy --patch
