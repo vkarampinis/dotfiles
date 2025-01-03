@@ -7,10 +7,6 @@ wget
 htop
 hub
 php
-php@7.4
-redis
-wrk
-mysql
 mas
 nmap
 Schniz/tap/fnm

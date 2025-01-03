@@ -1,5 +1,3 @@
-1295203466::Microsoft Remote Desktop
-526298438::Lightshot Screenshot
 425264550::Blackmagic Disk Speed Test
 409201541::Pages
 585829637::Todoist
