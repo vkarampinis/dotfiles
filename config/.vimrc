@@ -14,7 +14,9 @@ filetype plugin on
 set autoindent
 " }}}
 " Plugins {{{
-call plug#begin('~/.vim/plugged')
+set pyxversion=3
+set encoding=utf-8
+call plug#begin()
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -32,18 +34,18 @@ Plug 'neomake/neomake'
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 " Plug 'kristijanhusak/deoplete-phpactor'
 " Plug 'Shougo/deoplete.nvim'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-gtags'
-Plug 'phpactor/ncm2-phpactor'
-Plug 'ncm2/ncm2-tern'
-Plug 'ncm2/ncm2-go'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-ultisnips' 
-Plug 'SirVer/ultisnips'
+" Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
+" Plug 'ncm2/ncm2'
+" Plug 'ncm2/ncm2-gtags'
+" Plug 'phpactor/ncm2-phpactor'
+" Plug 'ncm2/ncm2-tern'
+" Plug 'ncm2/ncm2-go'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'StanAngeloff/php.vim'
 call plug#end()
@@ -162,7 +164,7 @@ augroup END
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_highlight_linenrs = 1
 " }}}
-" Syntastic {{{ 
+" Syntastic {{{
 set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -183,13 +185,13 @@ let g:ale_lint_on_text_changed = 1
 " ncm2 {{{
 
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
 " set completeopt=noinsert,menuone,noselect
 
 augroup ncm2
   au!
-  autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
   au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
   au User Ncm2PopupClose set completeopt=menuone
 augroup END
