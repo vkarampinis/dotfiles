@@ -21,6 +21,7 @@ qlmarkdown
 qlstephen
 qlvideo
 quicklook-json
+raycast
 slack
 spotify
 sublime-text

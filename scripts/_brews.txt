@@ -3,10 +3,12 @@ fzf
 git
 git-flow
 mtr
+nvim
 wget
 htop
 hub
 php
 mas
 nmap
-Schniz/tap/fnm
+fnm
+stats
