@@ -12,3 +12,5 @@ mas
 nmap
 fnm
 stats
+jordanbaird-ice
+diff-so-fancy
